@@ -1,11 +1,18 @@
-/* import React from 'react' */
+import React from 'react' 
 
 const navBar = () => {
   return (
     <>
       <div class="navbar bg-base-100 mb-40 shadow-xl rounded-xl">
         <div class="flex-1">
-          <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <a class="btn btn-ghost normal-case text-xl ">Que tomamos?</a>
+        </div>
+        <div>
+          <ul class="flex space-x-4  menu bg-base-100 menu-vertical lg:menu-horizontal rounded-box">
+            <li><a>Item 1</a></li>
+            <li><a>Item 2</a></li>
+            <li><a>Item 3</a></li>
+          </ul>
         </div>
         <div class="flex-none">
           <div class="dropdown dropdown-end">
