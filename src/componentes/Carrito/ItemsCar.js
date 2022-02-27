@@ -1,10 +1,6 @@
 import React from 'react'
 
 
-
-
-
-
 function Items({producto}) {
   return (
     <>
@@ -16,11 +12,11 @@ function Items({producto}) {
         <div class="flex items-center space-x-3">
           <div class="avatar">
             <div class="w-24 rounded-xl">
-              <img src={producto.imag} alt="Avatar Tailwind CSS Component"></img>                          
+              <img src={producto.imagen} alt="Avatar Tailwind CSS Component"></img>                          
             </div>
           </div>
           <div>
-            <div class="font-bold">{producto.nombre}</div>
+            <div class="font-bold">{producto.marca}</div>
             <div class="text-sm opacity-50">{producto.tipo}</div>
           </div>
         </div>
@@ -28,10 +24,10 @@ function Items({producto}) {
           <td>
             <h4 className="text-md font-medium text-blanck-900">{producto.descripcion}</h4>
             <br></br>
-            <span class="badge badge-ghost badge-md mr-4 ">Envio gratis</span>
-            <button class="btn btn-ghost btn-xs">Eliminar</button>
+            <span class="badge badge-ghost badge-md mr-4 ">{producto.envio}</span>
+            <button class="btn btn-ghost bg-gray-500 btn-xs">Eliminar</button>
           </td>
-          <td>Purple</td>
+          <td><input class="w-24 text-black" type="number" min="1" /* value={} *//></td>
           <th>
           <h4 className="text-md font-medium text-blanck-900">{producto.precio}</h4>
           </th>
