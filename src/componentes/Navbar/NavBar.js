@@ -1,6 +1,7 @@
 import React from 'react' 
 import Logo from '../Imagenes/Logochiquito.png'
 import {ImCart} from "react-icons/im"
+import { Link } from 'react-router-dom'
 
 
 
@@ -8,15 +9,17 @@ const navBar = () => {
   return (
     <>
     <nav className='navBar'>
-      <a href=""><img src={Logo} alt="imagen" /></a>
+      <Link to="/"><img src={Logo} alt="imagen" /></Link>
+     
       <div className='aNav'>
-        <a href="">Vinos</a>
-        <a href="">Whiskys</a>
-        <a href="">Cervezas</a>
-        <a href="">Licores</a>
-        <a href="">Champagne</a>
-        <a href="">Gin</a>
-        <a href=""><ImCart className='cartIcon'/><span className='spanNumber'>2</span></a>
+        
+        <Link to="/category/Vinos">Vinos</Link>
+        <Link to="/category/Whiskys">Whiskys</Link>
+        <Link to="/category/Cervezas">Cervezas</Link>
+        <Link to="/category/Licores">Licores</Link>
+        <Link to="/category/Champagne">Champagne</Link>
+        <Link to="/category/Gin">Gin</Link>
+        <Link to="/Carrito"><ImCart className='cartIcon'/><span className='spanNumber'>2</span></Link>
       </div>   
       
     </nav>

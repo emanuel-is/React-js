@@ -1,23 +1,26 @@
 import React from 'react'
+import Item from './Item'
 
 
 
 const ItemList = (props) => {
   return (
-   <>
-   <div className='cardFlex'>
-        <div class="card w-96 bg-base-100  glass  ">
-            <img src={props.img} alt="Bebida"/>
-            <div class="card-body">
-                <h2 class="card-title">{props.prod}</h2>
-                <p>{props.descripcion}</p>
-                <div class="justify-end card-actions">
-                    <button class="btn btn-outline btn-success">${props.precio}</button>
-                </div>
-            </div>
-        </div>
+   < >
+   <div className='itemContent'>
+        {props.bebidas.map(  (productos) =>{
+            return <Item key= {productos.id} 
+            id={productos.id}
+            prod={productos.product} 
+            tipo={productos.tipo}
+            marca ={productos.marca}
+            descripcion={productos.descripción}
+            precio={productos.precio}
+            stock={productos.stock}
+            img={productos.imagen}
+            emvio={productos.envio} />
+
+        })}
    </div>
-   
    
    </>
     

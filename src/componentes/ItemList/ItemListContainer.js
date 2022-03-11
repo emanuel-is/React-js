@@ -1,6 +1,7 @@
 import React from 'react'
 import ItemList from './ItemList';
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 
 /* const ProductosContainer =[
@@ -16,41 +17,48 @@ import { useEffect, useState } from 'react';
 
 
 
-const ItemListContainer = () => {
-
+const ItemListContainer = (props) => {
+    const {product} =useParams();
+    console.log("parametro", useParams())
     const [bebidas, setBebidas]= useState( []);
     
-    setTimeout(() => {
-        console.log(bebidas)
-    }, 2000);
     
-    useEffect(() => {
-      fetch("https://run.mocky.io/v3/3ba036e9-7f24-47a6-88c9-5b3427646b01")
-      .then((response) => {          
-        return response.json();
-      })   
-      .then((response) => {
-        setBebidas(response);
-    })
-      
-    }, [])
-    
+  useEffect(() => {
+    console.log("useEfect");
+      obtenerDatos();
+      category()
+  
+  }, [])
+  
 
+    const obtenerDatos = async ()=>{
+      const data= await fetch("https://run.mocky.io/v3/3ba036e9-7f24-47a6-88c9-5b3427646b01");
+      const bebidas = await data.json();
+      
+      category()
+      console.log(bebidas)
+      setBebidas(bebidas)
+      
+        }
+    function category (){           /* estoy tratando de manejar el tema de la categoria por fuera del fetch */
+      return new Promise(  (resolve, reject)=>{  /* con una promesa, pero la verdad es que no me esta saliendo. */
+        let error = false;
+        if (product ===undefined){
+          reject(new Error("error obteniendo CATEGORIAS"));
+        }else{
+           const categoryRequest = bebidas.filter( category=>{
+            return category.product===product;
+            
+          })
+          resolve(categoryRequest)
+          console.log(categoryRequest)
+        }
+      })
+    }
 
   return (
     <>
-    {bebidas.map(  (productos) =>{
-        return <ItemList 
-        prod={productos.product} 
-        tipo={productos.tipo}
-        marca ={productos.marca}
-        descripcion={productos.descripción}
-        precio={productos.precio}
-        stock={productos.stock}
-        img={productos.imagen}
-        emvio={productos.envio} />
-
-    })}
+    <ItemList bebidas={bebidas}/>
 
     
     </>
