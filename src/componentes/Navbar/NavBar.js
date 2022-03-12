@@ -14,7 +14,7 @@ const navBar = () => {
       <div className='aNav'>
         
         <Link to="/category/Vino">Vinos</Link>
-        <Link to="/category/whisky">Whiskys</Link>
+        <Link to="/category/Whisky">Whiskys</Link>
         <Link to="/category/Cerveza">Cervezas</Link>
         <Link to="/category/Licor">Licores</Link>
         <Link to="/category/Champagne">Champagne</Link>

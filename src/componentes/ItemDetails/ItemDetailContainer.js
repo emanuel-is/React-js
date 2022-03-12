@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 const DatosProd = [
   { 
    "id" : "1",
-   "product" :"whisky",
+   "product" :"Whisky",
    "tipo": "Blended Scotch",
    "marca": "Chivas Regal 18 años",
    "descripción": "Whisky Chivas Regal 18 Años 750 Ml Botella + Estuche",
@@ -66,7 +66,7 @@ const DatosProd = [
  },
  { 
    "id" : "6",
-   "product" :"whisky",
+   "product" :"Whisky",
    "tipo": "Red Label",
    "marca": "Johnnie Walker",
    "descripción": "Whisky Johnny Walker Red Label Importado 750 Ml",
@@ -107,12 +107,120 @@ const DatosProd = [
    "marca": "Amarula",
    "descripción": "Licor Amarula 750ml Oferta",
    "precio": 2800,
-   "imagen" :"https://http2.mlstatic.com/D_NQ_NP_954639-MLA46194096496_052021-O.jpg",
+   "imagen" :"https://www.espaciovino.com.ar/media/default/0001/53/thumb_52840_default_medium.jpeg",
    "stock" : 30,
    "envio" : "Envío con Cargo"
   
- }
- ]
+ },
+ { 
+  "id" : "10",
+  "product" :"Cerveza",
+  "tipo": "Honey 473ml",
+  "marca": "Temple",
+  "descripción": "Cerveza Temple Honey 473ml X6 Unidades",
+  "precio": 1080,
+  "imagen" :"https://http2.mlstatic.com/D_NQ_NP_708087-MLA49179825210_022022-O.jpg",
+  "stock" : 100,
+  "envio" : "Envío Gratis"
+ 
+},
+{ 
+  "id" : "11",
+  "product" :"Cerveza",
+  "tipo": "Amber Lager 410ml",
+  "marca": "Patagonia",
+  "descripción": "Patagonia Amber Lager 410ml X6 Unidades",
+  "precio": 1140,
+  "imagen" :"https://beermarket.com.ar/wp-content/uploads/2020/11/Patagonia-Amber-Lager-Sixpack-473ml.png",
+  "stock" :70,
+  "envio" : "Envío Gratis"
+ 
+},
+{ 
+  "id" : "12",
+  "product" :"Cerveza",
+  "tipo": "Lata 269 Ml",
+  "marca": "Corona",
+  "descripción": "Heladera Conservadora Corona 15 Lts + 10 Corona Lata 269 Ml",
+  "precio": 10595,
+  "imagen" :"https://http2.mlstatic.com/D_NQ_NP_605577-MLA49276646760_032022-V.jpg",
+  "stock" :6,
+  "envio" : "Envío Gratis"
+ 
+},
+{ 
+  "id" : "13",
+  "product" :"Whisky",
+  "tipo": "Black Label 750 Ml",
+  "marca": "Johnny Walker",
+  "descripción": "Whisky Johnny Walker Black Label 750 Ml Con Caja",
+  "precio": 3920,
+  "imagen" :"https://d2r9epyceweg5n.cloudfront.net/stores/001/685/376/products/20210827_154108-1-011-60a129d5cf29fd105216313108859007-640-0.jpeg",
+  "stock" :58,
+  "envio" : "Envío con Cargo"
+ 
+},
+{ 
+  "id" : "14",
+  "product" :"Vino",
+  "tipo": "Cabernet 750 Ml",
+  "marca": "Tumpeter",
+  "descripción": "Vino Trumpeter Cabernet 750 Ml Botella Trumpeter",
+  "precio": 1100,
+  "imagen" :"https://http2.mlstatic.com/D_NQ_NP_621510-MLA44399115307_122020-O.webp",
+  "stock" :300,
+  "envio" : "Envío con Cargo"
+ 
+},
+{ 
+  "id" : "15",
+  "product" :"Vino",
+  "tipo": "Red Blend Malbec 750 Ml",
+  "marca": "Nicasia Vineyards",
+  "descripción": "Vino Nicasia Vineyards Red Blend Malbec X2 750ml + Estuche",
+  "precio":3360 ,
+  "imagen" :"https://http2.mlstatic.com/D_NQ_NP_850135-MLA49179818607_022022-O.webp",
+  "stock" :10,
+  "envio" : "Envío con Cargo"
+ 
+},
+{ 
+  "id" : "16",
+  "product" :"Licor",
+  "tipo": "Cafe 750 Ml",
+  "marca": "Borguetti",
+  "descripción": "Licor Borguetti Cafe 750 Ml Caffe Espresso Borguetti",
+  "precio":2210 ,
+  "imagen" :"https://http2.mlstatic.com/D_NQ_NP_944393-MLA46398843590_062021-O.webp",
+  "stock" :25,
+  "envio" : "Envío Gratis"
+ 
+},
+{ 
+  "id" : "17",
+  "product" :"Gin",
+  "tipo": "Gin 700 Ml",
+  "marca": "Bulldog",
+  "descripción": "Pack 3 Unidades Gin Bulldog 700ml Bulldog",
+  "precio":11610 ,
+  "imagen" :"https://http2.mlstatic.com/D_NQ_NP_760013-MLA43602713639_092020-O.webp",
+  "stock" :32,
+  "envio" : "Envío Gratis"
+ 
+},
+{ 
+  "id" : "18",
+  "product" :"Gin",
+  "tipo": "Gin 750 Ml",
+  "marca": "Heredero",
+  "descripción": "Gin Heredero 750 Ml + Copon Con Estuche Regalo",
+  "precio":3200 ,
+  "imagen" :"https://http2.mlstatic.com/D_NQ_NP_728652-MLA48098898893_112021-O.jpg",
+  "stock" :78,
+  "envio" : "Envío Gratis"
+ 
+}
+]
      
       
 
