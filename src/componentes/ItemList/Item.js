@@ -13,7 +13,7 @@ const Item = (props) => {
                             <strong className="card-title">{props.prod}</strong>
                             <p>{props.descripcion}</p>
                             <div className="card-actions">
-                                <Link to="/Carrito/:productos" ><button className="btn btn-outline btn-success">${props.precio}</button></Link>
+                                <Link to="/Carrito" ><button className="btn btn-outline btn-success">${props.precio}</button></Link>
                                 <hr/>
                                 <Link to={`/item/${props.id}`} ><button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-success">Ver Detalles</button></Link>
                             </div>

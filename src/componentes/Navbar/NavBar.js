@@ -13,12 +13,12 @@ const navBar = () => {
      
       <div className='aNav'>
         
-        <Link to="/category/Vino">Vinos</Link>
-        <Link to="/category/Whisky">Whiskys</Link>
-        <Link to="/category/Cerveza">Cervezas</Link>
-        <Link to="/category/Licor">Licores</Link>
-        <Link to="/category/Champagne">Champagne</Link>
-        <Link to="/category/Gin">Gin</Link>
+        <Link to="/category/Vino" className='no-underline hover:underline text-center'>Vinos</Link>
+        <Link to="/category/Whisky" className='no-underline hover:underline text-center'>Whiskys</Link>
+        <Link to="/category/Cerveza" className='no-underline hover:underline text-center'>Cervezas</Link>
+        <Link to="/category/Licor" className='no-underline hover:underline text-center'>Licores</Link>
+        <Link to="/category/Champagne" className='no-underline hover:underline text-center'>Champagne</Link>
+        <Link to="/category/Gin" className='no-underline hover:underline text-center'>Gin</Link>
         <Link to="/Carrito"><ImCart className='cartIcon'/><span className='spanNumber'>2</span></Link>
       </div>   
       
