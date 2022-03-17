@@ -58,3 +58,13 @@
   justify-content: center;
   
 }
+
+.qty{
+  width:150px;
+  justify-content:left;
+  display:flex;
+}
+.qtyContainer{
+  display: flex;
+  margin-left: 50px;
+}
