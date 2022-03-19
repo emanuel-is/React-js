@@ -41,7 +41,7 @@ const ItemCount = (props) => {
                 <button onClick={add} className="btn btn-xs"><ImPlus/></button>
             </div>
             <div className="flex justify-center">
-            <button onClick={props.addCarrito}  className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">AGREGAR AL CARRITO</button>
+            <button onClick={()=>props.addCarrito(count)}  className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">AGREGAR AL CARRITO</button>
             </div>
 
 

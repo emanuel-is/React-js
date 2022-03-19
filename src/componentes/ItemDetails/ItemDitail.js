@@ -1,15 +1,19 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { useState } from 'react';
+import { Link, } from 'react-router-dom'
+import { useState, useContext } from 'react';
 import ItemCount from '../ItemCount/ItemCount'
+import CartContext from '../Context/CartContext';
 
 const ItemDitail = (props) => {
+  const {addItem} = useContext(CartContext);
+
 
   const [inCart, setInCart] = useState(false);
 
-  function addCarrito(){
+  function addCarrito(qty){
     alert(`Agregaste ${props.descripcion} a tu Carrito`);
     setInCart(true);
+    addItem(props,qty)
   } 
 
   return (
@@ -30,6 +34,7 @@ const ItemDitail = (props) => {
               )
               : (
                 <ItemCount
+                  addItem={addItem}
                   initial ={1}
                   stock={props.stock}
                   addCarrito={addCarrito}
