@@ -20,6 +20,7 @@ export function CartContextProvider ({children}) {
       const ItemToAdd ={...item,qty}
   
       setItemsCart( [...itemsCart,ItemToAdd])
+      getTotalPrice()
     }
   }
 
@@ -27,10 +28,35 @@ export function CartContextProvider ({children}) {
     return itemsCart.some(cadaItem => cadaItem.id===id);
   }
 
+  function countItemsInCart(){
+    let totalItems=0;
+    itemsCart.forEach(item => totalItems+=item.qty)
+    return totalItems;
+  }
+
+
+  function getTotalPrice(){
+    let totalPrice= 0;
+    itemsCart.forEach( item => totalPrice +=item.qty* item.precio)
+    return totalPrice;
+  }
+
+  function removeItem (idDelete){  // remuevo un solo item
+    setItemsCart(itemsCart.filter ( item=>item.id !==idDelete))
+  }
+
+  function removeCart (){
+    setItemsCart([])
+  }
+
   return (
     <CartContext.Provider value ={
                                   {itemsCart ,
-                                    addItem
+                                    addItem, 
+                                    countItemsInCart,
+                                    getTotalPrice,
+                                    removeItem,
+                                    removeCart
                                   }
     }>
         {children}

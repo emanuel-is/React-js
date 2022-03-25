@@ -1,23 +1,49 @@
 import React from 'react'
-import { Link, } from 'react-router-dom'
-import { useState, useContext } from 'react';
+import { Link, resolvePath, } from 'react-router-dom'
+import { useState, useContext , useEffect} from 'react';
 import ItemCount from '../ItemCount/ItemCount'
 import CartContext from '../Context/CartContext';
 
 const ItemDitail = (props) => {
   const {addItem} = useContext(CartContext);
 
+  const [boleano , setBoleano] = useState(true)  
+  useEffect(() => {
+    console.log("primer estado del boleano");
+  
+    return () => {
+      console.log("segundo estado del boleano");
+    }
+  }, [boleano])
+  
+
+
 
   const [inCart, setInCart] = useState(false);
 
   function addCarrito(qty){
-    alert(`Agregaste ${props.descripcion} a tu Carrito`);
-    setInCart(true);
-    addItem(props,qty)
+
+    setTimeout(() => {          // falta resolver este time Out. para que rtrace la carga del carrito. 
+      alert(`Agregaste ${props.descripcion} a tu Carrito`);
+      return(
+        setInCart(true),
+        addItem(props,qty)
+      )
+      
+    }, 2000);
+
+  
+
+   
   } 
+
+  /* function seteoboleano(){
+    setBoleano(false)
+  } */
 
   return (
     <>
+    
       <section className="text-gray-600 body-font">
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
@@ -50,7 +76,6 @@ const ItemDitail = (props) => {
           </div>
         </div>
       </section>
-  
     </>
   )
 }

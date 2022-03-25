@@ -1,7 +1,7 @@
 import React from 'react' 
 import Logo from '../Imagenes/Logochiquito.png'
-import {ImCart} from "react-icons/im"
 import { Link } from 'react-router-dom'
+import CartWidget from '../CartWidget/CartWidget'
 
 
 
@@ -19,7 +19,7 @@ const navBar = () => {
         <Link to="/category/Licor" className='no-underline hover:underline text-center'>Licores</Link>
         <Link to="/category/Champagne" className='no-underline hover:underline text-center'>Champagne</Link>
         <Link to="/category/Gin" className='no-underline hover:underline text-center'>Gin</Link>
-        <Link to="/Carrito"><ImCart className='cartIcon'/><span className='spanNumber'>2</span></Link>
+        <CartWidget/>
       </div>   
       
     </nav>

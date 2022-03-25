@@ -49,7 +49,10 @@ const ItemListContainer = (props) => {
 
   return (
     <>
-    <ItemList bebidas={bebidas}/>
+     
+        <ItemList bebidas={bebidas}/>
+      
+    
     </>
   )
 }

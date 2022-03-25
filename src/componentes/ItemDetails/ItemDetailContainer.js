@@ -238,10 +238,10 @@ const ItemDetailContainer = () => {
         return bebida.id===(id);
       })
       resolve(bebidaEncontrada)
-    }, 1000);
+    }, 2000);
   })
 
-
+ 
 
   const [bebida, setBebida]= useState( []);
 
@@ -259,13 +259,18 @@ const ItemDetailContainer = () => {
       console.log("La promesa termino")
     })
   }, [id])
+
+  
+
   
 
 
 
   return (
-    <div>
-      { <ItemDitail 
+    <>
+      
+            
+      <ItemDitail 
             id={bebida.id}
             prod={bebida.product} 
             tipo={bebida.tipo}
@@ -274,9 +279,8 @@ const ItemDetailContainer = () => {
             precio={bebida.precio}
             stock={bebida.stock}
             img={bebida.imagen}
-            emvio={bebida.envio}  />
-      }
-    </div>
+            envio={bebida.envio}  />
+    </>
   )
 }
 
