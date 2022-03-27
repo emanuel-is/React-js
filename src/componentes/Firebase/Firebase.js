@@ -1,6 +1,8 @@
 // Import the functions you need from the SDKs you need
+import { async } from "@firebase/util";
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/analytics";
+
+import { getFirestore,collection, query, where, getDocs, getDoc,doc, assDoc } from "firebase/firestore/lite";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -19,3 +21,34 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
+
+
+//---- obetengo todos los productos con una funcion con export--------
+export async function getAllBebidas(){
+  const  miColec = collection(db,"productos");
+  const productosSnap = await getDocs(miColec);
+
+  const result = productosSnap.docs.map( item =>{
+    return {...item.data(), id:item.id}
+  })
+  return result;
+  
+}
+
+//------obtengo los datos filtrados por categorias en una funcion con export---- 
+export async function getAllBebidasFrom(category){
+  const miColec = collection(db, "productos");
+  const myquery = query(miColec, where ("product", "==", category));
+
+
+  const productosSnap = await getDocs(myquery);
+
+  const result = productosSnap.docs.map( item=>{
+    return {...item.data(), id : item.id}
+  });
+
+  return result;
+}
+
+
+//----falta la funlcion para obtener un solo item. 

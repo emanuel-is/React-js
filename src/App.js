@@ -10,6 +10,7 @@ import {CartContextProvider} from './componentes/Context/CartContext'
 
 
 
+
 function App() {
 
   const saludo =" holaaaaaa!!!!";
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <>
+   
     <CartContextProvider>
       <BrowserRouter>
         <NavBar/>
