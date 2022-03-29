@@ -2,7 +2,9 @@ import React from 'react'
 import ItemDitail from './ItemDitail'
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import {getBebida} from '../Firebase/Firebase'
 
+/* 
 const DatosProd = [
   { 
    "id" : "1",
@@ -222,33 +224,34 @@ const DatosProd = [
 }
 ]
      
-      
+   */    
 
 
 
 
 const ItemDetailContainer = () => {
-  const{id} = useParams();
-  console.log("Params", useParams());
-
+  /* console.log("Params", useParams());
+  
   let obtenerDatos = new Promise( (resolve,reject)=>{
     setTimeout(() => {
       const bebidaEncontrada = DatosProd.find( bebida=>{
-      
+        
         return bebida.id===(id);
       })
       resolve(bebidaEncontrada)
     }, 2000);
-  })
-
- 
-
-  const [bebida, setBebida]= useState( []);
-
+  }) */
+  
+  
+  
+  const{id} = useParams();
+  const [bebida, setBebida]= useState([]);
+  console.log (bebida);
   useEffect(() => {
-    obtenerDatos
-
+    let requestDatos= getBebida(id);
     
+    
+    requestDatos
     .then( (datosResolve)=>{
       setBebida(datosResolve);
     })

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, resolvePath, } from 'react-router-dom'
+import { Link, } from 'react-router-dom'
 import { useState, useContext , useEffect} from 'react';
 import ItemCount from '../ItemCount/ItemCount'
 import CartContext from '../Context/CartContext';
@@ -30,7 +30,7 @@ const ItemDitail = (props) => {
         addItem(props,qty)
       )
       
-    }, 2000);
+    }, 1000);
 
   
 

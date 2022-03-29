@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { async } from "@firebase/util";
+
 import { initializeApp } from "firebase/app";
 
 import { getFirestore,collection, query, where, getDocs, getDoc,doc, assDoc } from "firebase/firestore/lite";
@@ -51,4 +51,14 @@ export async function getAllBebidasFrom(category){
 }
 
 
-//----falta la funlcion para obtener un solo item. 
+//---- funlcion para obtener un solo item. 
+
+
+export async function getBebida(id){
+  const miColec= collection(db, "productos");
+  const docRef = doc(miColec, id);
+
+  const resultDoc= await getDoc(docRef);
+  return { ...resultDoc.data(), id: resultDoc.id };
+
+}
