@@ -2,7 +2,7 @@
 
 import { initializeApp } from "firebase/app";
 
-import { getFirestore,collection, query, where, getDocs, getDoc,doc, assDoc } from "firebase/firestore/lite";
+import { getFirestore,collection, query, where, getDocs, getDoc,doc,addDoc} from "firebase/firestore/lite";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -61,4 +61,14 @@ export async function getBebida(id){
   const resultDoc= await getDoc(docRef);
   return { ...resultDoc.data(), id: resultDoc.id };
 
+}
+
+// ---- funcion para enviar orden del carrito a firebase.---- 
+
+
+export async function sendOrder(orderData){
+  const miColec=collection(db, "orders");
+  const order = await addDoc (collection(miColec, orderData));
+  console.log(order.id);
+  return (order.id);
 }

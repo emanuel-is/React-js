@@ -7,15 +7,7 @@ import CartContext from '../Context/CartContext';
 const ItemDitail = (props) => {
   const {addItem} = useContext(CartContext);
 
-  const [boleano , setBoleano] = useState(true)  
-  useEffect(() => {
-    console.log("primer estado del boleano");
-  
-    return () => {
-      console.log("segundo estado del boleano");
-    }
-  }, [boleano])
-  
+
 
 
 

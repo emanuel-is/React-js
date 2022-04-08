@@ -246,7 +246,6 @@ const ItemDetailContainer = () => {
   
   const{id} = useParams();
   const [bebida, setBebida]= useState([]);
-  console.log (bebida);
   useEffect(() => {
     let requestDatos= getBebida(id);
     
@@ -259,7 +258,6 @@ const ItemDetailContainer = () => {
       console.log(errorReject);
     })
     .finally( ()=>{
-      console.log("La promesa termino")
     })
   }, [id])
 
