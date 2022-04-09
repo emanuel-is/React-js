@@ -23,9 +23,10 @@ bundling/retrocompatibilidad.
 *daisyUI.
 *React Icons.
 *Firebase V9.6.9
+*git-hub.
 
 
 
 ### `Linkedin`
 
-Mi perfil de Linkedin es: [linkedin.com/in/emanuelalejandroislas]
+Mi perfil de Linkedin es:[Linkedin](linkedin.com/in/emanuelalejandroislas)
