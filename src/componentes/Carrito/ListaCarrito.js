@@ -5,10 +5,13 @@ import { Link } from 'react-router-dom'
 import CartForm from './CartForm';
 import { sendOrder } from '../Firebase/Firebase';
 import { Timestamp } from 'firebase/firestore/lite';
+import { useState } from 'react';
 
 
 
 const ListaCarrito = (props) => {
+
+    const [orderDone, setOrdenDone]= useState(false)
     const {itemsCart, removeItem, removeCart, getTotalPrice } = useContext(CartContext);
 
     
@@ -17,9 +20,9 @@ const ListaCarrito = (props) => {
         let itemsForOrder = itemsCart.map(  (item)=>{
             return{
                 id:item.id,
-                producto:item.product,
+                producto:item.prod,
                 qty:item.qty,
-                price:item.price,
+                price:item.precio,
                 Timestamp: Timestamp.fromDate( new Date())
             }
         })
@@ -28,12 +31,27 @@ const ListaCarrito = (props) => {
             buyer:buyer,
             items:[...itemsForOrder],
             total:getTotalPrice()
+        
         }
-        sendOrder(order);
+        let createOrder= sendOrder(order);
+        createOrder.then (idres=> setOrdenDone(idres));
+        removeCart();
     }
-
     
 
+    if(orderDone){
+        return(
+            <div className="hero min-h-screen bg-base-200">
+                <div className="hero-content text-center">
+                    <div className="max-w-md">
+                        <h1 className="text-5xl font-bold">FELICITACIONES!</h1>
+                        <p className="py-6">Tu compra se realizo con exito.! Tu N° de ticket es: <strong>{orderDone}</strong> </p>
+                         <Link to="/"><button className="btn btn-primary">VOLVER A LA GALERIA</button></Link>
+                    </div>
+                </div>
+            </div>
+        )
+    }
     if(itemsCart ==0){
         return(
             <div className="hero min-h-screen bg-base-200">
@@ -94,11 +112,10 @@ const ListaCarrito = (props) => {
                 <div>
                     <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-indigo-300">Total : ${getTotalPrice()}</h1>
                     <div>
-                        <button className="btn btn-outline btn-primary">Finalizar Compra</button>
                         <button onClick={ ()=>{removeCart()}} className="btn btn-outline btn-warning">Borrar Carrito</button>
                     </div>
-                </div>
-                <CartForm handleSubmit={handleSubmit}/>
+                </div>  
+                <CartForm handleSubmit={handleSubmit}/>:
             </div>
             
         )

@@ -68,7 +68,7 @@ export async function getBebida(id){
 
 export async function sendOrder(orderData){
   const miColec=collection(db, "orders");
-  const order = await addDoc (collection(miColec, orderData));
-  console.log(order.id);
-  return (order.id);
+  const orderDoc = await addDoc(miColec, orderData);
+  console.log(orderDoc.id);
+  return orderDoc.id;
 }
