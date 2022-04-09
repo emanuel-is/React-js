@@ -29,4 +29,4 @@ bundling/retrocompatibilidad.
 
 ### `Linkedin`
 
-Mi perfil de Linkedin es:[Linkedin](linkedin.com/in/emanuelalejandroislas)
+Mi perfil de Linkedin es:[Linkedin](https://www.linkedin.com/in/emanuelalejandroislas/)
